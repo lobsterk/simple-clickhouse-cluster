@@ -1,43 +1,14 @@
 <yandex>
     <remote_servers>
-        <ontime_cluster>
+        <!-- Test only shard config for testing distributed storage -->
+        <test_shard_localhost>
             <shard>
                 <replica>
-                    <default_database>r0</default_database>
-                    <host>ch-server-1</host>
-                    <port>9000</port>
-                </replica>
-                <replica>
-                    <default_database>r1</default_database>
-                    <host>ch-server-3</host>
+                    <host>localhost</host>
                     <port>9000</port>
                 </replica>
             </shard>
-            <shard>
-                <replica>
-                    <default_database>r0</default_database>
-                    <host>ch-server-2</host>
-                    <port>9000</port>
-                </replica>
-                <replica>
-                    <default_database>r1</default_database>
-                    <host>ch-server-1</host>
-                    <port>9000</port>
-                </replica>
-            </shard>
-            <shard>
-                <replica>
-                    <default_database>r0</default_database>
-                    <host>ch-server-3</host>
-                    <port>9000</port>
-                </replica>
-                <replica>
-                    <default_database>r1</default_database>
-                    <host>ch-server-2</host>
-                    <port>9000</port>
-                </replica>
-            </shard>
-        </ontime_cluster>
+        </test_shard_localhost>
     </remote_servers>
     <zookeeper>
         <node>

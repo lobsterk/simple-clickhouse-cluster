@@ -1,5 +1,6 @@
 version: "3.2"
 services:
+
   ch-server-1:
     image: yandex/clickhouse-server
     volumes:
@@ -7,16 +8,22 @@ services:
       - ./pp_ch01_config.xml:/etc/clickhouse-server/config.xml
     ports:
       - 8123:8123
+
   ch-server-2:
     image: yandex/clickhouse-server
     volumes:
       - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
       - ./pp_ch02_config.xml:/etc/clickhouse-server/config.xml
+    ports:
+    - 8133:8123
+
   ch-server-3:
     image: yandex/clickhouse-server
     volumes:
       - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
       - ./pp_ch03_config.xml:/etc/clickhouse-server/config.xml
+    ports:
+    - 8143:8123
 
   zookeeper:
     image: zookeeper
