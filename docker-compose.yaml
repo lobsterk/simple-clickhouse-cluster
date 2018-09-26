@@ -45,6 +45,12 @@ services:
     ports:
       - 8153:8123
 
+  ch-client:
+    image: yandex/clickhouse-client
+    entrypoint:
+    - /bin/sleep
+    command:
+    - infinity
   zookeeper:
     image: zookeeper
 
