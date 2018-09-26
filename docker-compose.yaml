@@ -4,26 +4,38 @@ services:
   ch-server-1:
     image: yandex/clickhouse-server
     volumes:
-      - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
-      - ./pp_ch01_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp_ch01_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp_ch01_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
     ports:
       - 8123:8123
 
   ch-server-2:
     image: yandex/clickhouse-server
     volumes:
-      - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
-      - ./pp_ch02_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp_ch02_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp_ch02_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
     ports:
-    - 8133:8123
+      - 8133:8123
 
   ch-server-3:
     image: yandex/clickhouse-server
     volumes:
-      - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
-      - ./pp_ch03_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp_ch03_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp_ch03_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
     ports:
-    - 8143:8123
+      - 8143:8123
+
+  ch-server-4:
+    image: yandex/clickhouse-server
+    volumes:
+    - ./pp_ch04_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp_ch04_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
+    ports:
+      - 8153:8123
 
   zookeeper:
     image: zookeeper

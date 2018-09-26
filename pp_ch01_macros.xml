@@ -1,0 +1,4 @@
+<macros>
+    <shard>01</shard>
+    <replica>ch-server-1</replica>
+</macros>
