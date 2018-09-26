@@ -4,36 +4,44 @@ services:
   ch-server-1:
     image: yandex/clickhouse-server
     volumes:
-    - ./pp_ch01_config.xml:/etc/clickhouse-server/config.xml
-    - ./pp_ch01_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./pp01/pp_ch01_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp01/pp_ch01_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./pp01/pp_ch01_users.xml:/etc/clickhouse-server/users.d/users.xml
     - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
+    - ./pp01/storage:/var/lib/clickhouse
     ports:
       - 8123:8123
 
   ch-server-2:
     image: yandex/clickhouse-server
     volumes:
-    - ./pp_ch02_config.xml:/etc/clickhouse-server/config.xml
-    - ./pp_ch02_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./pp02/pp_ch02_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp02/pp_ch02_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./pp02/pp_ch02_users.xml:/etc/clickhouse-server/users.d/users.xml
     - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
+    - ./pp02/storage:/var/lib/clickhouse
     ports:
       - 8133:8123
 
   ch-server-3:
     image: yandex/clickhouse-server
     volumes:
-    - ./pp_ch03_config.xml:/etc/clickhouse-server/config.xml
-    - ./pp_ch03_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./pp03/pp_ch03_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp03/pp_ch03_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./pp03/pp_ch03_users.xml:/etc/clickhouse-server/users.d/users.xml
     - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
+    - ./pp03/storage:/var/lib/clickhouse
     ports:
       - 8143:8123
 
   ch-server-4:
     image: yandex/clickhouse-server
     volumes:
-    - ./pp_ch04_config.xml:/etc/clickhouse-server/config.xml
-    - ./pp_ch04_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./pp04/pp_ch04_config.xml:/etc/clickhouse-server/config.xml
+    - ./pp04/pp_ch04_macros.xml:/etc/clickhouse-server/config.d/macros.xml
+    - ./pp04/pp_ch04_users.xml:/etc/clickhouse-server/users.d/users.xml
     - ./remote_servers.xml:/etc/clickhouse-server/config.d/remote_servers.xml
+    - ./pp04/storage:/var/lib/clickhouse
     ports:
       - 8153:8123
 

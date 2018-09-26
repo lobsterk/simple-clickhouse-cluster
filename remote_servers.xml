@@ -7,10 +7,14 @@
                 <replica>
                     <host>ch-server-1</host>
                     <port>9000</port>
+                    <user>pp_user</user>
+                    <password>ABQVtGhg</password>
                 </replica>
                 <replica>
                     <host>ch-server-2</host>
                     <port>9000</port>
+                    <user>pp_user</user>
+                    <password>ABQVtGhg</password>
                 </replica>
             </shard>
             <shard>
@@ -19,10 +23,14 @@
                 <replica>
                     <host>ch-server-3</host>
                     <port>9000</port>
+                    <user>pp_user</user>
+                    <password>ABQVtGhg</password>
                 </replica>
                 <replica>
                     <host>ch-server-4</host>
                     <port>9000</port>
+                    <user>pp_user</user>
+                    <password>ABQVtGhg</password>
                 </replica>
         </shard>
         </pp_clickhouse_cluster>
